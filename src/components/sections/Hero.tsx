@@ -56,7 +56,7 @@ export function Hero() {
 
       <Container className="relative grid min-h-[calc(100svh-4rem)] items-center gap-16 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
         {/* Contenido principal */}
-        <div className="max-w-3xl">
+        <div className="min-w-0 max-w-3xl">
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5 text-sm text-emerald-300">
             <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
             Disponible para oportunidades y nuevos proyectos
@@ -66,9 +66,9 @@ export function Hero() {
             Full Stack Developer · AI & Automation
           </p>
 
-          <h1 className="max-w-5xl text-balance text-5xl font-bold tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-full text-balance text-[clamp(1.75rem,9vw,2.25rem)] font-bold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
             Construyo software,
-            <span className="block bg-gradient-to-r from-[#00D4FF] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+            <span className="block max-w-full bg-gradient-to-r from-[#00D4FF] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
               IA y automatizaciones
             </span>
             que resuelven problemas reales.
