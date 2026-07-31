@@ -12,7 +12,7 @@ export function Section({
   return (
     <section
       className={cn(
-        "relative py-24 sm:py-28 lg:py-32",
+        "relative scroll-mt-16 py-24 sm:py-28 lg:py-32",
         className
       )}
       {...props}

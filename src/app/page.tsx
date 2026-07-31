@@ -1,5 +1,6 @@
 import {
   About,
+  Contact,
   Education,
   Experience,
   Hero,
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Experience />
       <Technologies />
       <Education />
+      <Contact />
     </main>
   );
 }
