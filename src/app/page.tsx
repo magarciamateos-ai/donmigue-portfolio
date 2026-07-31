@@ -1,5 +1,6 @@
 import {
   About,
+  Education,
   Experience,
   Hero,
   Projects,
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Projects />
       <Experience />
       <Technologies />
+      <Education />
     </main>
   );
 }

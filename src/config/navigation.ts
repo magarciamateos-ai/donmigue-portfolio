@@ -20,6 +20,10 @@ export const mainNavigation = [
     href: "#tecnologias",
   },
   {
+    label: "Formación",
+    href: "#formacion",
+  },
+  {
     label: "Contacto",
     href: "#contacto",
   },
