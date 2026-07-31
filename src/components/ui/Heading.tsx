@@ -1,39 +1,45 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-const headingVariants = cva("font-heading tracking-tight text-foreground", {
-  variants: {
-    as: {
-      h1: "text-4xl font-semibold sm:text-5xl",
-      h2: "text-3xl font-semibold sm:text-4xl",
-      h3: "text-2xl font-semibold",
-      h4: "text-xl font-medium",
-      h5: "text-lg font-medium",
-      h6: "text-base font-medium",
-    },
-  },
-  defaultVariants: {
-    as: "h2",
-  },
-});
+type SectionHeadingProps = {
+  eyebrow?: string;
+  title: ReactNode;
+  description?: ReactNode;
+  align?: "left" | "center";
+  className?: string;
+};
 
-type HeadingProps = React.ComponentProps<"h1"> &
-  VariantProps<typeof headingVariants> & {
-    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  };
-
-export function Heading({
-  as = "h2",
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  align = "left",
   className,
-  children,
-  ...props
-}: HeadingProps) {
-  const Comp = as;
-
+}: SectionHeadingProps) {
   return (
-    <Comp className={cn(headingVariants({ as }), className)} {...props}>
-      {children}
-    </Comp>
+    <div
+      className={cn(
+        "max-w-3xl",
+        align === "center" && "mx-auto text-center",
+        className
+      )}
+    >
+      {eyebrow && (
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-400">
+          {eyebrow}
+        </p>
+      )}
+
+      <h2 className="text-balance text-3xl font-bold tracking-[-0.035em] text-white sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+
+      {description && (
+        <p className="mt-5 text-pretty text-base leading-8 text-slate-400 sm:text-lg">
+          {description}
+        </p>
+      )}
+    </div>
   );
 }
