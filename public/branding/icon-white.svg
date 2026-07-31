@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" viewBox="0 0 512 512" role="img">
+<title>DonMigue isotipo</title><g id="isotipo" inkscape:groupmode="layer" inkscape:label="Isotipo">
+      <circle id="circle" cx="256" cy="256" r="210" fill="none" stroke="#FFFFFF" stroke-width="28"/>
+      <path id="letter-d" d="M146 156 V356 H208 C252 356 276 316 276 256 C276 196 252 156 208 156 H146" fill="none" stroke="#FFFFFF" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="letter-m" d="M208 156 L312 258 L378 178 V356" fill="none" stroke="#FFFFFF" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+    </g></svg>

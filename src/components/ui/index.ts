@@ -9,3 +9,4 @@ export {
   CardTitle,
 } from "./Card";
 export { Heading } from "./Heading";
+export { Logo } from "./Logo";
