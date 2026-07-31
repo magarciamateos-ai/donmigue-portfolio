@@ -1,5 +1,6 @@
 import {
   About,
+  Experience,
   Hero,
   Projects,
 } from "@/components/sections";
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <Projects />
+      <Experience />
     </main>
   );
 }
