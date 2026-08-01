@@ -9,6 +9,7 @@ import {
   Workflow,
 } from "lucide-react";
 
+import { Reveal } from "@/components/animations";
 import { Container } from "@/components/layout";
 import { Logo } from "@/components/ui";
 import { siteConfig } from "@/config/site";
@@ -56,7 +57,7 @@ export function Hero() {
 
       <Container className="relative grid min-h-[calc(100svh-4rem)] items-center gap-16 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
         {/* Contenido principal */}
-        <div className="min-w-0 max-w-3xl">
+        <Reveal className="min-w-0 max-w-3xl">
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5 text-sm text-emerald-300">
             <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
             Disponible para oportunidades y nuevos proyectos
@@ -104,10 +105,14 @@ export function Hero() {
             <span aria-hidden="true">·</span>
             Presencial, híbrido o remoto
           </div>
-        </div>
+        </Reveal>
 
         {/* Panel técnico */}
-        <div className="relative mx-auto w-full max-w-lg">
+        <Reveal
+          className="relative mx-auto w-full max-w-lg"
+          delay={0.15}
+          distance={32}
+        >
           <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-cyan-500/30 via-blue-600/10 to-violet-600/30 blur-xl" />
 
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#111827]/85 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
@@ -177,7 +182,7 @@ export function Hero() {
               <p>];</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
