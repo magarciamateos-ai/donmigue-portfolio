@@ -20,9 +20,70 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
-  description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+
+  title: {
+    default: `${siteConfig.name} | ${siteConfig.title}`,
+    template: `%s | ${siteConfig.shortName}`,
+  },
+
+  description: siteConfig.description,
+
+  applicationName: siteConfig.shortName,
+
+  authors: [
+    {
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  ],
+
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+
+  keywords: [
+    "Miguel Ángel García Mateos",
+    "Full Stack Developer",
+    "Desarrollador web",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "Inteligencia Artificial",
+    "Automatización",
+    "Huelva",
+  ],
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "/",
+    siteName: siteConfig.shortName,
+    title: `${siteConfig.name} | ${siteConfig.title}`,
+    description: siteConfig.description,
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | ${siteConfig.title}`,
+    description: siteConfig.description,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
