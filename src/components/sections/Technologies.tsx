@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/animations";
 import { TechnologyCard } from "@/components/cards";
 import { Container, Section } from "@/components/layout";
 import { SectionHeading } from "@/components/ui";
@@ -21,19 +22,21 @@ export function Technologies() {
 
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeading
-            eyebrow="Tecnologías"
-            title={
-              <>
-                Un stack completo para construir
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                  {" "}
-                  productos de extremo a extremo.
-                </span>
-              </>
-            }
-            description="Combino desarrollo frontend, backend, datos, infraestructura, inteligencia artificial y automatización para llevar una solución desde la idea hasta producción."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Tecnologías"
+              title={
+                <>
+                  Un stack completo para construir
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                    {" "}
+                    productos de extremo a extremo.
+                  </span>
+                </>
+              }
+              description="Combino desarrollo frontend, backend, datos, infraestructura, inteligencia artificial y automatización para llevar una solución desde la idea hasta producción."
+            />
+          </Reveal>
 
           <p className="max-w-sm text-sm leading-7 text-slate-500 lg:text-right">
             Las herramientas cambian. El objetivo permanece: elegir la
@@ -43,11 +46,14 @@ export function Technologies() {
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {technologyCategories.map((category) => (
-            <TechnologyCard
+          {technologyCategories.map((category, index) => (
+            <Reveal
               key={category.id}
-              category={category}
-            />
+              delay={Math.min(index * 0.06, 0.3)}
+              distance={20}
+            >
+              <TechnologyCard category={category} />
+            </Reveal>
           ))}
         </div>
       </Container>

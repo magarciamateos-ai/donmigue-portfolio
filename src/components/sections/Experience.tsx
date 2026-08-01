@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/animations";
 import { ExperienceItem } from "@/components/cards";
 import { Container, Section } from "@/components/layout";
 import { SectionHeading } from "@/components/ui";
@@ -15,26 +16,33 @@ export function Experience() {
       />
 
       <Container>
-        <SectionHeading
-          eyebrow="Experiencia"
-          title={
-            <>
-              Un recorrido entre la ingeniería y el
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                {" "}desarrollo de software.
-              </span>
-            </>
-          }
-          description="Mi experiencia profesional combina ingeniería, fabricación, mantenimiento y desarrollo tecnológico. Esa perspectiva multidisciplinar me permite abordar el software con una mentalidad práctica y orientada a resultados."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Experiencia"
+            title={
+              <>
+                Un recorrido entre la ingeniería y el
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                  {" "}desarrollo de software.
+                </span>
+              </>
+            }
+            description="Mi experiencia profesional combina ingeniería, fabricación, mantenimiento y desarrollo tecnológico. Esa perspectiva multidisciplinar me permite abordar el software con una mentalidad práctica y orientada a resultados."
+          />
+        </Reveal>
 
         <div className="mt-16">
           {experiences.map((experience, index) => (
-            <ExperienceItem
+            <Reveal
               key={`${experience.company}-${experience.period}`}
-              experience={experience}
-              index={index}
-            />
+              delay={index * 0.1}
+              distance={24}
+            >
+              <ExperienceItem
+                experience={experience}
+                index={index}
+              />
+            </Reveal>
           ))}
         </div>
       </Container>

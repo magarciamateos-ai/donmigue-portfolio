@@ -40,19 +40,17 @@ export function About() {
   return (
     <Section
       id="sobre-mi"
-      className="overflow-hidden border-b border-white/10 bg-[#0B1017]"
+      className="border-b border-white/10 bg-[#0B1017]"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-1/3 size-96 rounded-full bg-blue-600/10 blur-3xl"
-      />
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -left-40 top-1/3 size-96 rounded-full bg-blue-600/10 blur-3xl" />
+      </div>
 
       <Container>
-        <Reveal
-          className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20"
-          delay={0.12}
-          distance={28}
-        >
+        <div className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
             <Reveal>
               <SectionHeading
@@ -69,41 +67,50 @@ export function About() {
               />
             </Reveal>
 
-            <div className="mt-8 space-y-5 text-base leading-8 text-slate-400">
-              <p>
-                Trabajo principalmente con React, Next.js, Node.js,
-                TypeScript, Docker y Linux, cubriendo desde la interfaz
-                y la lógica de negocio hasta el despliegue.
-              </p>
+            <Reveal
+              delay={0.12}
+              distance={28}
+            >
+              <div className="mt-8 space-y-5 text-base leading-8 text-slate-400">
+                <p>
+                  Trabajo principalmente con React, Next.js, Node.js,
+                  TypeScript, Docker y Linux, cubriendo desde la interfaz
+                  y la lógica de negocio hasta el despliegue.
+                </p>
 
-              <p>
-                También desarrollo automatizaciones con N8N e integro
-                inteligencia artificial mediante LLM, OpenAI, Ollama y
-                bases de datos vectoriales.
-              </p>
-            </div>
+                <p>
+                  También desarrollo automatizaciones con N8N e integro
+                  inteligencia artificial mediante LLM, OpenAI, Ollama y
+                  bases de datos vectoriales.
+                </p>
+              </div>
 
-            <div className="mt-9 flex flex-wrap gap-2">
-              {[
-                "Producto",
-                "Arquitectura",
-                "Frontend",
-                "Backend",
-                "IA",
-                "Automatización",
-                "DevOps",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-slate-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+              <div className="mt-9 flex flex-wrap gap-2">
+                {[
+                  "Producto",
+                  "Arquitectura",
+                  "Frontend",
+                  "Backend",
+                  "IA",
+                  "Automatización",
+                  "DevOps",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-slate-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <Reveal
+            className="grid gap-4 sm:grid-cols-2"
+            delay={0.12}
+            distance={28}
+          >
             {strengths.map((strength) => {
               const Icon = strength.icon;
 
@@ -131,8 +138,8 @@ export function About() {
                 </article>
               );
             })}
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </Container>
     </Section>
   );

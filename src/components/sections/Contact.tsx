@@ -11,6 +11,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa6";
 
+import { Reveal } from "@/components/animations";
 import { Container, Section } from "@/components/layout";
 import { SectionHeading } from "@/components/ui";
 import { siteConfig } from "@/config/site";
@@ -78,44 +79,52 @@ Un saludo.`
 
           <div className="relative grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <SectionHeading
-                eyebrow="Contacto"
-                title={
-                  <>
-                    ¿Tienes una idea, un proyecto o una
-                    <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                      {" "}oportunidad profesional?
-                    </span>
-                  </>
-                }
-                description="Estoy disponible para colaborar en proyectos de desarrollo web, aplicaciones, inteligencia artificial, automatización y soluciones de software."
-              />
+              <Reveal>
+                <SectionHeading
+                  eyebrow="Contacto"
+                  title={
+                    <>
+                      ¿Tienes una idea, un proyecto o una
+                      <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                        {" "}oportunidad profesional?
+                      </span>
+                    </>
+                  }
+                  description="Estoy disponible para colaborar en proyectos de desarrollo web, aplicaciones, inteligencia artificial, automatización y soluciones de software."
+                />
+              </Reveal>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={contactHref}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#00D4FF] via-[#2563EB] to-[#7C3AED] px-6 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_35px_rgba(37,99,235,0.25)]"
-                >
-                  Escribirme
-                  <Send className="size-4" />
-                </a>
+              <Reveal distance={24}>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href={contactHref}
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#00D4FF] via-[#2563EB] to-[#7C3AED] px-6 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_35px_rgba(37,99,235,0.25)]"
+                  >
+                    Escribirme
+                    <Send className="size-4" />
+                  </a>
 
-                <a
-                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 text-sm font-semibold text-white transition duration-200 hover:border-white/25 hover:bg-white/[0.07]"
-                >
-                  Llamar
-                  <Phone className="size-4" />
-                </a>
-              </div>
+                  <a
+                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 text-sm font-semibold text-white transition duration-200 hover:border-white/25 hover:bg-white/[0.07]"
+                  >
+                    Llamar
+                    <Phone className="size-4" />
+                  </a>
+                </div>
 
-              <p className="mt-5 text-sm leading-6 text-slate-500">
-                Normalmente respondo por correo electrónico en cuanto me es
-                posible. También puedes contactar conmigo a través de LinkedIn.
-              </p>
+                <p className="mt-5 text-sm leading-6 text-slate-500">
+                  Normalmente respondo por correo electrónico en cuanto me es
+                  posible. También puedes contactar conmigo a través de LinkedIn.
+                </p>
+              </Reveal>
             </div>
 
-            <div className="space-y-3">
+            <Reveal
+              className="space-y-3"
+              delay={0.12}
+              distance={24}
+            >
               {contactMethods.map((method) => {
                 const Icon = method.icon;
 
@@ -186,7 +195,7 @@ Un saludo.`
                   <ArrowUpRight className="size-3.5 text-slate-600 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </Container>

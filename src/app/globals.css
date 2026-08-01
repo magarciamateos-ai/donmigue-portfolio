@@ -134,3 +134,27 @@
     scroll-behavior: smooth;
   }
 }
+
+.reveal-anim {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance, 24px));
+  transition:
+    opacity var(--reveal-duration, 650ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms),
+    transform var(--reveal-duration, 650ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-anim--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-anim {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

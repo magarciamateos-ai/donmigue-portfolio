@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/animations";
 import { Container, Section } from "@/components/layout";
 import { ProjectCard } from "@/components/cards";
 import { SectionHeading } from "@/components/ui";
@@ -20,18 +21,20 @@ export function Projects() {
 
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeading
-            eyebrow="Proyectos destacados"
-            title={
-              <>
-                Software pensado para
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                  {" "}resolver necesidades reales.
-                </span>
-              </>
-            }
-            description="Una selección de aplicaciones en las que combino desarrollo Full Stack, diseño de producto, automatización e infraestructura."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Proyectos destacados"
+              title={
+                <>
+                  Software pensado para
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                    {" "}resolver necesidades reales.
+                  </span>
+                </>
+              }
+              description="Una selección de aplicaciones en las que combino desarrollo Full Stack, diseño de producto, automatización e infraestructura."
+            />
+          </Reveal>
 
           <p className="max-w-sm text-sm leading-7 text-slate-500 lg:text-right">
             Cada proyecto tendrá próximamente su propia página con arquitectura,
@@ -41,11 +44,16 @@ export function Projects() {
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (
-            <ProjectCard
+            <Reveal
               key={project.title}
-              project={project}
-              index={index}
-            />
+              delay={index * 0.1}
+              distance={28}
+            >
+              <ProjectCard
+                project={project}
+                index={index}
+              />
+            </Reveal>
           ))}
         </div>
       </Container>
