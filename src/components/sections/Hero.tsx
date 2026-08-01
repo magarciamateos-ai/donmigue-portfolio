@@ -121,7 +121,7 @@ export function Hero() {
                 <Logo
                   variant="icon-color"
                   className="size-12"
-                  priority
+                  preload
                 />
 
                 <div>

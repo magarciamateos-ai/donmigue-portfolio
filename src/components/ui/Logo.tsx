@@ -12,7 +12,7 @@ type LogoVariant =
 type LogoProps = {
   variant?: LogoVariant;
   className?: string;
-  priority?: boolean;
+  preload?: boolean;
 };
 
 const logos: Record<
@@ -63,17 +63,17 @@ const logos: Record<
 export function Logo({
   variant = "horizontal-dark",
   className,
-  priority = false,
+  preload = false,
 }: LogoProps) {
   const logo = logos[variant];
 
   return (
     <Image
+      preload={preload}
       src={logo.src}
       alt={logo.alt}
       width={logo.width}
       height={logo.height}
-      priority={priority}
       className={cn("h-auto w-auto", className)}
     />
   );
