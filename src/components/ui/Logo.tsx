@@ -13,6 +13,7 @@ type LogoProps = {
   variant?: LogoVariant;
   className?: string;
   preload?: boolean;
+  loading?: "eager" | "lazy";
 };
 
 const logos: Record<
@@ -64,12 +65,15 @@ export function Logo({
   variant = "horizontal-dark",
   className,
   preload = false,
+  loading,
 }: LogoProps) {
   const logo = logos[variant];
+  const loadingMode = loading ?? (preload ? "eager" : "lazy");
 
   return (
     <Image
       preload={preload}
+      loading={loadingMode}
       src={logo.src}
       alt={logo.alt}
       width={logo.width}

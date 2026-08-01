@@ -54,7 +54,7 @@ export function Navbar() {
           <Logo
             variant="horizontal-dark"
             className="h-9 w-auto"
-            preload
+            loading="eager"
           />
         </Link>
 
