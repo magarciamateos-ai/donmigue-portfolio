@@ -5,6 +5,7 @@ import {
   Workflow,
 } from "lucide-react";
 
+import { Reveal } from "@/components/animations";
 import { Container, Section } from "@/components/layout";
 import { SectionHeading } from "@/components/ui";
 
@@ -47,20 +48,26 @@ export function About() {
       />
 
       <Container>
-        <div className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <Reveal
+          className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20"
+          delay={0.12}
+          distance={28}
+        >
           <div>
-            <SectionHeading
-              eyebrow="Sobre mí"
-              title={
-                <>
-                  Ingeniería, software y una obsesión por
-                  <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                    {" "}resolver problemas.
-                  </span>
-                </>
-              }
-              description="Soy Ingeniero Técnico Industrial y desarrollador Full Stack. Combino pensamiento analítico, experiencia técnica y desarrollo de software para crear soluciones digitales útiles, escalables y mantenibles."
-            />
+            <Reveal>
+              <SectionHeading
+                eyebrow="Sobre mí"
+                title={
+                  <>
+                    Ingeniería, software y una obsesión por
+                    <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                      {" "}resolver problemas.
+                    </span>
+                  </>
+                }
+                description="Soy Ingeniero Técnico Industrial y desarrollador Full Stack. Combino pensamiento analítico, experiencia técnica y desarrollo de software para crear soluciones digitales útiles, escalables y mantenibles."
+              />
+            </Reveal>
 
             <div className="mt-8 space-y-5 text-base leading-8 text-slate-400">
               <p>
@@ -125,7 +132,7 @@ export function About() {
               );
             })}
           </div>
-        </div>
+        </Reveal>
       </Container>
     </Section>
   );
