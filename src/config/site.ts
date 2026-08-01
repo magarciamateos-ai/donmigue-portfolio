@@ -8,7 +8,7 @@ export const siteConfig = {
   description:
     "Full Stack Developer specialized in React, Next.js, Node.js, Artificial Intelligence and Process Automation.",
 
-  url: "https://donmigue-portfolio-vqfa.vercel.app",
+  url: "https://donmigue-portfolio.vercel.app",
 
   email: "m.a.garciamateos@gmail.com",
 
